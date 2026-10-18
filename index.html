@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Man 3D Design v2 — Stark Tech HUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="status-dot"></div>
+        <span class="status-label">MARK 85 // STARK OS</span>
+      </div>
+      <div class="telemetry-badge telemetry-right">
+        <span class="stat-line">POWER: <strong id="powerVal" class="cyan-text">99.4%</strong></span>
+      </div>
+    </header>
+
+    <!-- 3D Viewport -->
+    <div class="viewport-wrapper">
+      <canvas id="armorCanvas"></canvas>
+      <div class="hud-crosshair"></div>
+      <div class="telemetry-badge telemetry-left">
+        <span class="stat-line">INTEGRITY: <strong id="integrityVal" class="gold-text">100%</strong></span>
+        <span class="stat-line">MODE: <strong class="cyan-text">COMBAT</strong></span>
+      </div>
+      <div class="touch-hint">Drag to rotate • Pinch / Scroll to zoom</div>
+    </div>
+
+    <!-- Controls Panel -->
+    <section class="controls-panel">
+      <!-- Preset strip -->
+      <div class="preset-strip">
+        <button class="preset-btn active" data-preset="front">Front View</button>
+        <button class="preset-btn" data-preset="action">Action Stance</button>
+        <button class="preset-btn" data-preset="weapons">Weapons Lock</button>
+        <button class="preset-btn" data-preset="flight">Flight Mode</button>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="control-grid">
+        <button class="action-btn" id="btnUnibeam">
+          <span>⚡</span> Unibeam Pulse
+        </button>
+        <button class="action-btn" id="btnMissiles">
+          <span>🚀</span> Missile Barrage
+        </button>
+        <button class="action-btn" id="btnFlight">
+          <span>✈️</span> Flight Stabilizers
+        </button>
+        <button class="action-btn" id="btnRotate">
+          <span>🔄</span> Toggle Orbit
+        </button>
+      </div>
+
+      <button class="action-btn full-width" id="btnDiagnostics">
+        <span>🛡️</span> System Diagnostics
+      </button>
+    </section>
+  </div>
+
+  <script src="ironman-3d.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
